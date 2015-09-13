@@ -1,7 +1,7 @@
 describe("Todo Challenge", function() {
 
   beforeEach(function() {
-    browser.get("localhost:3000")
+    browser.get("http://localhost:3000")
   });
 
   it("has a title", function() {
