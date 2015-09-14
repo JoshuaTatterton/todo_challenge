@@ -7,7 +7,7 @@ This is a front end manager for tasks and jobs to be done using angular.
 * You can also delete all tasks marked as completed in one go
 * It also displays the number of tasks on screen
 
-NB I started implementing the filters for all/completed/umcompleted tasks but ran out of time so code has been moved to the aside file. I would have taken a big rearrangement of previous code to implement and I had no time for that amount of work (to be completed at a later date)
+NB I started introducing the filters for all/completed/umcompleted tasks but ran out of time so code has been moved to the aside file. (It would have taken a big rearrangement of previous code to implement so it is to be implemented at a later date)
 
 After cloning this repo you will need to run npm install and bower install to get all the required packages.
 
