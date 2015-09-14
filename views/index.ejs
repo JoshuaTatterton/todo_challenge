@@ -10,17 +10,20 @@
     <script src="/js/todoChallengeController.js"></script>
   </head>
 
-  <body ng-controller="TodoChallengeController as searchCtrl">
+  <body ng-controller="TodoChallengeController as ctrl">
     <form>
-        <input type="text" ng-model="searchCtrl.taskText">
-        <button class="btn" ng-click="searchCtrl.addTask()">Add Task</button>
+        <input type="text" ng-model="ctrl.taskText">
+        <button class="btn" ng-click="ctrl.addTask()">Add Task</button>
     </form>
     <ul class="list-group">
-      <li ng-repeat="task in searchCtrl.taskList">
-        <input type="checkbox" class="checkbox" unchecked>
+      <li ng-repeat="task in ctrl.taskList">
+        <input type="checkbox" class="checkbox" ng-click="ctrl.check(task.id)" ng-checked="task.status=='checked'">
         <span class="taskText">{{task.text}}</span>
-        <button class="delbtn" ng-click="searchCtrl.delTask(task.id)">x</button>
+        <button class="delbtn" ng-click="ctrl.delTask(task.id)">x</button>
       </li>
     </ul>
+    <div class="count">Total Tasks: {{ctrl.totalTasks()}}</div>
+    <button class="delcheckedbtn" ng-click="ctrl.delChecked()">Delete all Completed</button>
+
   </body>
 </html>

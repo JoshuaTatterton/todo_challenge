@@ -1,0 +1,52 @@
+These are what I didn't have time to fully implement so they break it instead.
+
+index.ejs line 26
+<div>
+  Filters: 
+  <button class="todobtn" ng-click="searchCtrl.showOnlyTodo()">To do</button>
+</div>
+
+todoChallengeController.spec.js line 53
+it("can hide all checked tasks", function() {
+  ctrl.taskText = "Wash Dishes";
+  ctrl.addTask();
+  ctrl.check(0);
+  ctrl.taskText = "Play";
+  ctrl.addTask();
+  ctrl.showOnlyTodo();
+  expect(ctrl.taskList).toEqual([{text: 'Play', id: 1, status: 'unchecked'}]);
+});
+
+todoChallengeFeature.js line 59
+describe("filters", function() {
+  beforeEach(function() {
+    addBox.sendKeys("Play Games");
+    addButton.click();
+    checkbox.click();
+    addBox.sendKeys("Pretend to program");
+    addButton.click();
+  });
+
+  it("can swap to show only tasks still to do", function() {
+    onlyTodoButton.click();
+    var profiles = element.all(by.repeater("task in searchCtrl.taskList")).map(function(item) {
+      return item.element(by.className("taskText")).getText();
+    });
+    expect(profiles).not.toContain("Play Games"); 
+    expect(profiles).toContain("Pretend to program");
+  });
+});
+
+todoChallengeController.js line 46
+self.showOnlyTodo = function() {
+  var unchecked = [];
+  for (i = 0; i < self.taskList.length; i++) {
+    if (self.taskList[i].status==="checked") {
+      self.allTasks.concat(self.taskList[i])
+    } else {
+      self.allTasks.concat(self.taskList[i])
+      unchecked.push(self.taskList[i])
+    }
+  }
+  self.taskList = unchecked
+};
