@@ -7,9 +7,20 @@
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/todoChallengeController.js"></script>
   </head>
 
-  <body>
-    Hello World!
+  <body ng-controller="TodoChallengeController as searchCtrl">
+    <form>
+        <input type="text" ng-model="searchCtrl.taskText">
+        <button class="btn" ng-click="searchCtrl.addTask()">Add Task</button>
+    </form>
+    <ul class="list-group">
+      <li ng-repeat="task in searchCtrl.taskList">
+        <input type="checkbox" class="checkbox" unchecked>
+        <span class="taskText">{{task.text}}</span>
+        <button class="delbtn" ng-click="searchCtrl.delTask(task.id)">x</button>
+      </li>
+    </ul>
   </body>
 </html>
