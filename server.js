@@ -1,6 +1,5 @@
 var gzippo = require('gzippo');
 var express = require('express');
-var express = require('morgan');
 var app = express();
 var server = require('http').createServer(app);
 
