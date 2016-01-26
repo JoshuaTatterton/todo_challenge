@@ -15,17 +15,17 @@
     <h1>To Do List</h1>
     <form>
         <input type="text" ng-model="ctrl.taskText">
-        <button class="btn" ng-click="ctrl.addTask()">Add Task</button>
+        <div class="btn" id="btn" ng-click="ctrl.addTask()">Add Task</div>
     </form>
     <ul class="list-group">
       <li ng-repeat="task in ctrl.taskList">
         <input type="checkbox" class="checkbox" ng-click="ctrl.check(task.id)" ng-checked="task.status=='checked'">
         <span class="taskText">{{task.text}}</span>
-        <button class="delbtn" ng-click="ctrl.delTask(task.id)">x</button>
+        <div class="btn" id="delbtn" ng-click="ctrl.delTask(task.id)">x</div>
       </li>
     </ul>
     <div class="count">Total Tasks: {{ctrl.totalTasks()}}</div>
-    <button class="delcheckedbtn" ng-click="ctrl.delChecked()">Delete all Completed</button>
+    <div class="btn" id="delcheckedbtn" ng-click="ctrl.delChecked()">Delete all Completed</div>
 
   </body>
 </html>

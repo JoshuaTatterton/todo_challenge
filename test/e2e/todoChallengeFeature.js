@@ -5,11 +5,11 @@ describe("Todo Challenge", function() {
   });
   
   var addBox = element(by.model("ctrl.taskText"));
-  var addButton = element(by.className("btn"));
+  var addButton = element(by.id("btn"));
   var checkbox = element(by.className("checkbox"));
-  var delButton = element(by.className("delbtn"));
-  var delCheckedButton = element(by.className("delcheckedbtn"));
-  var onlyTodoButton = element(by.className("todobtn"));
+  var delButton = element(by.id("delbtn"));
+  var delCheckedButton = element(by.id("delcheckedbtn"));
+  var onlyTodoButton = element(by.id("todobtn"));
 
   it("has a title", function() {
     expect(browser.getTitle()).toEqual("Todo Challenge");

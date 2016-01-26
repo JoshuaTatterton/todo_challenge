@@ -4,5 +4,21 @@ body {
   color: white;
 }
 h1 {
-  color: silver;
+  
+}
+.btn {
+  display: inline-block;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5px;
+  background-color: #595959;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.btn:hover {
+  background-color: #737373;
+}
+.btn:active {
+  background-color: #1a1a1a
 }
