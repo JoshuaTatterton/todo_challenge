@@ -1,6 +1,6 @@
 # To Do Challenge
 
-One of the weekend challenges was to create a single page to do list using Angular, to keep track of a jobs to be done. As this is a basic exercise in using Angular there has been no CSS been used on the web page.
+One of the weekend challenges was to create a single page to do list using Angular, to keep track of a jobs to be done.
 
 Please find the website on Heroku [here](https://ancient-escarpment-2552.herokuapp.com)
 
